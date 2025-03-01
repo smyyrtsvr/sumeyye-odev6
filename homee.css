@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/*=================== BASE ===================*/
+:root {
+  --blue: #2f4d76;
+  --yellow: #FFD700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--blue);
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*=================== NAV ===================*/
+.header{
+  position: fixed;
+  height: 3.5rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color:#2f4d76 ;
+  z-index: 100;
+  transition: box-shadow .4s;
+  
+}
+
+.nav{
+  position: relative;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.head{
+  font-size: 28px;
+  margin-top:7px;
+  margin-left: -52px;
+}
+
+.nav__list{
+  margin-top: 18px;
+  margin-left:400px;
+}
+
+
+
+
+.nav__toggle{
+  display: flex;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #1adcb5;
+  transition: width 0.3s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+/*=================== MAIN ===================*/
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;  
+  z-index: 1;
+  position: relative;
+}
+.dots {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  opacity: 0.3;
+  z-index: 0; 
+}
+
+.dots div {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.container{
+  max-width: 1110px;
+}
+
+.grid{
+  display: grid;
+}
+
+.section{
+  padding-block: 5rem 1rem;
+}
+
+.section__title{
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.main{
+  overflow: hidden;
+}
+/*=================== RESPONSIVE DESIGN ===================*/
+/* for mobile devices */
+
+@media screen and (max-width: 1150px){
+  .nav__menu{
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      padding-block: 4.5rem 3.5rem;
+      transition: top .4s;
+  }
+}
+.nav__list{
+  text-align: center;
+  display: flex;
+}
+
+.nav__link{
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-family: "Aclonica", sans-serif;
+  transition: 0.5s;
+}
+
+
+/*============== HOME ==========*/
+.home__container{
+  padding-block: 3rem 2rem;
+  justify-content: center;
+  row-gap: 3.5rem;
+}
+
+.home__data{
+  position: relative;
+  text-align: center;
+}
+
+.home__title{
+  font-size: 3.6rem;
+  margin-bottom: 1rem;
+}
+
+.home__description{
+  margin-bottom: 2.5rem;
+}
+
+.home__images{
+  position: relative;
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+  filter: drop-shadow(10px 35px 10px rgb(0, 0, 0));
+}
+
+/*========== BUTTON ========*/
+.button{
+  display: inline-flex;
+  background-color:#2f4d76;
+  color: rgb(255, 255, 255);
+  padding: 1rem 1.5rem;
+  font-family: "Aclonica", sans-serif;
+  border:#ffffff;
+  border-style:groove;
+  border-radius: 4rem;
+  transition: box-shadow 0.6s;
+}
+
+.button:hover{
+  box-shadow: 0 8px 24px rgba(94, 119, 173, 0.573) ;
+}
+/* For small devices */
+@media screen and (max-width: 539px) {
+  .container{
+          margin-inline: 1rem;
+      }
+  
+  .home__title{
+      font-size: 2.5rem;
+  }
+}
+
+  /* For medium devices */
+  @media screen and (min-width: 540px) {
+  .home__container{
+      grid-template-columns: 360px;
+      justify-content: center;
+  }
+
+  }
+  /* For large devices */
+  @media screen and (min-width: 1150px){
+      .container{
+          margin-inline: auto;
+      }
+  
+      .section{
+          padding-block: 7rem 2rem;
+      }
+  
+      .section__title{
+          margin-bottom: 4.5rem;
+      }
+  
+      .nav{
+          height: calc(3.5rem + 2rem);
+      }
+  
+      .nav__toggle{
+          display: none;
+      }
+  
+      .nav__list{
+          flex-direction: row;
+          column-gap: 4rem;
+      }
+  
+      .home__container{
+          grid-template-columns: 430px 605px;
+          align-items: center;
+          column-gap: 4rem;
+          padding-block: 7rem 4rem;
+      }
+  
+      .home__data{
+          text-align: initial;
+      }
+  
+      .home__description{
+          margin-bottom: 3.5rem;
+          padding-right: 3rem;
+      }
+  }

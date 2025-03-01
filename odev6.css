@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --blue: #2f4d76;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  background-color: var(--blue);
+  color: #ffffff;
+  height: 3.5rem;
+  display: flex;
+}
+
+.Baslik {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 5px;
+  margin-left: 80px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_list {
+  display: flex;
+  gap: 60px;
+  margin-left: 450px;
+}
+
+.home-section {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  padding-top: 130px;
+}
+
+.home.box {
+  text-align: center;
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.explanation {
+  opacity: 0.7;
+}
+
+.furniture {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  gap: 80px;
+  position: relative;
+  flex-wrap: wrap;
+
+  p {
+    text-align: center;
+  }
+  .price {
+    font-weight: 700;
+  }
+  img {
+    width: 300px;
+    height: 300px;
+    transition: transform 0.4s;
+  }
+}
+
+.message {
+  font-family: Merienda;
+}
+
+.add-button {
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  justify-content: center;
+  padding: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 3px 4px 8px rgb(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.chair:hover .add-button {
+  opacity: 1;
+}
+
+.chair .add-button:hover {
+  transform: scale(1.1);
+}
+
+.sayac {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: gold;
+  cursor: pointer;
+  margin-left: -3px;
+  font-size: 15px;
+}
+
+.chair {
+  transition: transform 0.3 ease;
+}
+
+.chair:hover {
+  transform: translateY(-10px);
+}
+
+.chair {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.chair img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.chair:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: silver;
+}
+
+.chair:hover img {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 1150px) {
+  .nav_list li:not(.shop_count .shopp) {
+    display: none;
+  }
+
+  .Baslik {
+    margin-left: 20px;
+  }
+
+  .ri-shopping-cart-line {
+    margin-right: 10px;
+  }
+
+  .furniture {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .chair {
+    width: 50%;
+  }
+}
